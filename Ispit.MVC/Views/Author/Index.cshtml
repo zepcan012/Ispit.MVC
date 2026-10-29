@@ -1,0 +1,38 @@
+﻿@model List<Ispit.MVC.Models.Author>
+
+@{
+    ViewData["Title"] = "Authors";
+}
+
+<h1>List of Authors</h1>
+
+@if (Model.Any())
+{
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Bio</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var author in Model)
+            {
+                <tr>
+                    <td>@author.Id</td>
+                    <td>@author.Name</td>
+                    <td>@author.Age</td>
+                    <td>@author.Bio</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h1> Nema autora za ispis!</h1>
+}
+
